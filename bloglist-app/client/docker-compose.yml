@@ -1,0 +1,6 @@
+services:
+  app:
+    image: blogs-client
+    build:
+      context: .
+      dockerfile: Dockerfile

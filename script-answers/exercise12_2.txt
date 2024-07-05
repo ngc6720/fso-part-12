@@ -1,0 +1,18 @@
+➜  script-answers docker container run -it ubuntu bash
+root@2983655b364b:/# ls
+bin  boot  dev  etc  home  lib  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+root@2983655b364b:/# cd usr
+root@2983655b364b:/usr# ls
+bin  games  include  lib  libexec  local  sbin  share  src
+root@2983655b364b:/usr# cd src
+root@2983655b364b:/usr/src# ls
+root@2983655b364b:/usr/src# mkdir app
+root@2983655b364b:/usr/src# ls
+app
+root@2983655b364b:/usr/src# cd app
+root@2983655b364b:/usr/src/app# touch index.js
+root@2983655b364b:/usr/src/app# ls
+index.js
+root@2983655b364b:/usr/src/app# exit
+exit
+➜  script-answers

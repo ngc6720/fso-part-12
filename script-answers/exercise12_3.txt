@@ -1,0 +1,7 @@
+➜  script-answers docker start -i flamboyant_khorana
+root@2983655b364b:/# nano /usr/src/app/index.js
+root@2983655b364b:/# cat /usr/src/app/index.js
+console.log("Hello World")
+root@2983655b364b:/# exit
+exit
+➜  script-answers

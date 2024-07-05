@@ -1,0 +1,74 @@
+➜  ~ docker exec -it todo-backend-mongo-1 mongosh -u root -p example
+Current Mongosh Log ID:	666abfbf17d23c91d98db5fa
+Connecting to:		mongodb://<credentials>@127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.2.6
+Using MongoDB:		7.0.11
+Using Mongosh:		2.2.6
+
+For mongosh info see: https://docs.mongodb.com/mongodb-shell/
+
+
+To help improve our products, anonymous usage data is collected and sent to MongoDB periodically (https://www.mongodb.com/legal/privacy-policy).
+You can opt-out by running the disableTelemetry() command.
+
+------
+   The server generated these startup warnings when booting
+   2024-06-13T09:41:16.118+00:00: /sys/kernel/mm/transparent_hugepage/enabled is 'always'. We suggest setting it to 'never' in this binary version
+   2024-06-13T09:41:16.118+00:00: vm.max_map_count is too low
+------
+
+test> show dbs
+admin         100.00 KiB
+config         72.00 KiB
+local          72.00 KiB
+the_database   56.00 KiB
+test> use the_database
+switched to db the_database
+the_database> show collections
+todos
+the_database> db.todos.find({})
+[
+  {
+    _id: ObjectId('6669e6cccc2a2498d48db5fb'),
+    text: 'HOHOHO',
+    done: false
+  },
+  {
+    _id: ObjectId('6669e6cccc2a2498d48db5fc'),
+    text: 'Learn about containers',
+    done: false
+  },
+  {
+    _id: ObjectId('666ac13717d23c91d98db5fb'),
+    text: 'HAHAHAHHAAHAH',
+    done: false
+  }
+]
+the_database> db.todos.insertOne({ text:"Increase the number of tools in my tool belt", done: false })
+{
+  acknowledged: true,
+  insertedId: ObjectId('666ac23a17d23c91d98db5fc')
+}
+the_database> db.todos.find({})
+[
+  {
+    _id: ObjectId('6669e6cccc2a2498d48db5fb'),
+    text: 'HOHOHO',
+    done: false
+  },
+  {
+    _id: ObjectId('6669e6cccc2a2498d48db5fc'),
+    text: 'Learn about containers',
+    done: false
+  },
+  {
+    _id: ObjectId('666ac13717d23c91d98db5fb'),
+    text: 'HAHAHAHHAAHAH',
+    done: false
+  },
+  {
+    _id: ObjectId('666ac23a17d23c91d98db5fc'),
+    text: 'Increase the number of tools in my tool belt',
+    done: false
+  }
+]
+the_database>

@@ -1,0 +1,25 @@
+name: blog-app-dev
+services:
+  app:
+    extends:
+      file: ./client/docker-compose.dev.yml
+      service: app
+    environment:
+      - VITE_BACKEND_URL=http://localhost:8080/api/
+  server:
+    extends:
+      file: ./server/docker-compose.dev.yml
+      service: server
+  mongo:
+    extends:
+      file: ./server/docker-compose.dev.yml
+      service: mongo
+  nginx:
+    image: nginx:1.20.1
+    volumes:
+      - ./nginx.dev.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - 8081:80
+    depends_on:
+      - app
+      - server

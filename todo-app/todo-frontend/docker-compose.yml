@@ -1,0 +1,6 @@
+services:
+  app:
+    image: hello-front
+    build:
+      context: .
+      dockerfile: Dockerfile
